@@ -5,7 +5,7 @@
         <input
           class="Search__input"
           @keyup.enter="requestData"
-          placeholder="npm package name"
+          placeholder="NPM package name"
           type="search" name="search"
           v-model="package"
         >
@@ -15,14 +15,14 @@
        {{ errorMessage }}
       </div>
       <hr>
-      <h1 class="title" v-if="loaded">{{ packageName }}</h1>
+      <h1 class="title" v-if="loaded" style="text-transform: capitalize">{{ packageName }}</h1>
       <div class="Chart__container" v-if="loaded">
         <div class="Chart__title">
           Downloads per Day <span>{{ period }}</span>
           <hr>
         </div>
         <div class="Chart__content">
-          <line-chart v-if="loaded" :chart-data="downloads" :chart-labels="labels"></line-chart>
+          <line-chart v-if="loaded" :chart-data="downloads" :chart-labels="labels" ></line-chart>
         </div>
       </div>
     </div>
